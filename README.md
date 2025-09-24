@@ -21,7 +21,9 @@ Machine Learning: scikit-learn (joblib for model serialization)
 Models:
 phishing.pk1 for URL classification
 lr_model.pkl or fake_news_pipeline.pkl for fake news classification
-project/ │ ├── app.py # Flask app ├── models/ │ ├── phishing.pk1 # Phishing ML model │ ├── vectorizer.pk1 # URL vectorizer │ ├── fake_news_pipeline.pkl # Fake news ML pipeline ├── templates/ │ ├── index.html │ ├── phishing.html │ ├── fake-news.html │ └── about.html ├── static/ │ ├── css/ │ │ ├── phishing.css │ │ └── fake-news.css │ └── images/ └── README.md
+
+Project structure:
+project/  ├── app.py # Flask app ├── models/ ├── phishing.pk1 # Phishing ML model  ├── vectorizer.pk1 # URL vectorizer  ├── fake_news_pipeline.pkl # Fake news ML pipeline ├── templates/  ├── index.html  ├── phishing.html  ├── fake-news.html | └── about.html ├── static/  ├── css/  ├── phishing.css  └── fake-news.css  └── images/ 
 
 🚀 Installation
 Clone the repository
