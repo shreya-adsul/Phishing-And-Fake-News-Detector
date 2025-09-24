@@ -1,0 +1,51 @@
+A
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberGuard AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">CyberGuard<span>AI</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>The Smartest Way to Stay Safe Online</h1>
+      <p>AI-powered detection for phishing links and fake news.</p>
+      <div class="buttons">
+        <a href="{{ url_for('phishing_page') }}" class="btn secondary">Phishing Detector</a>
+
+
+        <a href="{{ url_for('fake_news_page') }}" class="btn secondary">Fake News Detector</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CyberGuard AI | Built for Security & Trust</p>
+  </footer>
+</body>
+
+</html>

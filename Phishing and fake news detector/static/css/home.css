@@ -1,0 +1,134 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  color: #fff;
+  background-color: #110e4b; /* Dark bluish background fallback */
+  overflow-x: hidden;
+}
+
+/* Navbar */
+header {
+  width: 100%;
+   padding: 10px  ;
+   line-height: 1.5 ;
+   text-align: center; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121647;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  
+
+
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  padding-left: 10px;
+}
+.logo span {
+  color: #a259ff; /* Purple accent */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-left: 30px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: #a259ff; /* Purple hover */
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url("../images/background.jpg.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10%;
+  position: relative;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: #a259ff; /* Purple to Blue gradient */
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(162, 89, 255, 0.6);
+}
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #a259ff;
+  color: #f9f7fb;
+}
+.btn.secondary:hover {
+  background: #a259ff;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(162, 89, 255, 0.7);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #110e4b;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #ccc;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | CyberGuard AI</title>
+  
+  <!-- Link CSS via Flask static -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">CyberGuard<span>AI</span></div>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-content">
+      <h1>About CyberGuard AI</h1>
+      <p>
+        CyberGuard AI is an AI-powered security platform designed to protect users 
+        from phishing attacks and misinformation. Our goal is to make the internet 
+        safer for everyone by using advanced machine learning models to detect 
+        suspicious links and fake news content in real time.
+      </p>
+
+      <div class="mission-vision">
+        <div class="card">
+          <h2>Our Mission</h2>
+          <p>To provide simple, reliable, and AI-driven tools that safeguard online users.</p>
+        </div>
+        <div class="card">
+          <h2>Our Vision</h2>
+          <p>A safer digital world with trustable information and secure browsing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-image">
+      <!-- AI image served from static/images -->
+      <img src="{{ url_for('static', filename='images/AIimage.jpg') }}" alt="AI Security Illustration">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CyberGuard AI | Built for Security & Trust</p>
+  </footer>
+</body>
+</html>

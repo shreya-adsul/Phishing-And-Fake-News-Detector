@@ -1,0 +1,175 @@
+/* --------------------------- */
+/* Reset and Base Styles       */
+/* --------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: url('../images/aboutback.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------- */
+/* Header                       */
+/* --------------------------- */
+header {
+  background-color: #0d47a1;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* --------------------------- */
+/* Main Section                 */
+/* --------------------------- */
+.detector-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.detector-container {
+  background-color: #ffffff;
+  padding: 35px 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.detector-container:hover {
+  transform: translateY(-5px);
+}
+
+.detector-container h2 {
+  margin-bottom: 25px;
+  color: #0d47a1;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* --------------------------- */
+/* Input Field + Clear Button   */
+/* --------------------------- */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.detector-container input {
+  width: 100%;
+  padding: 12px 40px 12px 15px; /* extra padding for clear button */
+  margin-bottom: 20px;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  z-index: 1;
+  position: relative;
+}
+
+/* Clear "×" button */
+.clear-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: #999;
+  display: none; /* hidden by default */
+  user-select: none;
+  transition: color 0.2s ease;
+  z-index: 2; 
+}
+
+.clear-btn:hover {
+  color: #555;
+}
+
+/* --------------------------- */
+/* Buttons                     */
+/* --------------------------- */
+.detector-container button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+#checkBtn {
+  background-color: #0d47a1;
+  color: #fff;
+}
+
+#checkBtn:hover {
+  background-color: #08306b;
+}
+
+.home-btn {
+  background-color: #64b5f6;
+  color: #0d47a1;
+}
+
+.home-btn:hover {
+  background-color: #42a5f5;
+}
+
+/* --------------------------- */
+/* Result Text                 */
+/* --------------------------- */
+#result {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* --------------------------- */
+/* Spinner                     */
+/* --------------------------- */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(0,0,0,0.2);
+  border-top-color: rgba(0,0,0,0.7);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------- */
+/* Footer                       */
+/* --------------------------- */
+footer {
+  background-color: #0d47a1;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: #fff;
+}

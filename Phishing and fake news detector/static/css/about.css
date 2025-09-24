@@ -1,0 +1,148 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  color: #fff;
+  /* background fixed to load from static/images */
+  background: url("../images/background.jpg") no-repeat center center/cover;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121647;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  padding-left: 10px;
+}
+.logo span {
+  color: #a259ff;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-left: 30px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: #a259ff;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 10% 60px;
+  /* fixed background path */
+  background: url("../images/aboutback.jpg") no-repeat center center/cover;
+  gap: 50px;
+}
+.about-content {
+  flex: 1;
+}
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+.mission-vision {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+.card {
+  background: #121647;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #a259ff;
+}
+.card p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* About Illustration */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.about-image img {
+  max-width: 350px;
+  margin-top: 20px;
+  filter: drop-shadow(0 0 15px rgba(162, 89, 255, 0.4));
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #110e4b;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* 📱 Mobile Responsive (no design changes, just layout fix) */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 6% 50px;
+  }
+  .mission-vision {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-image img {
+    max-width: 200px;
+    margin-top: 25px;
+  }
+  .about-content h1 {
+    font-size: 2rem;
+  }
+  .about-content p {
+    font-size: 1rem;
+  }
+}

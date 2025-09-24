@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fake-news.css') }}">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Fake News Detector</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="detector-section">
+      <div class="detector-container">
+        <h2>Check if a News Article is Real or Fake</h2>
+
+        <div class="input-wrapper">
+          <textarea id="newsInput" name="news" placeholder="Paste the news text here..." required></textarea>
+          <span class="clear-btn" id="clearBtn">&times;</span>
+        </div>
+
+        <button id="checkBtn" type="button">Check News</button>
+        <p id="result"></p>
+        <button class="home-btn" onclick="goHome()">Back to Home</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CyberGuard AI | Built for Security & Trust.</p>
+  </footer>
+
+  <script>
+    const checkBtn = document.getElementById('checkBtn');
+    const newsInput = document.getElementById('newsInput');
+    const result = document.getElementById('result');
+    const clearBtn = document.getElementById('clearBtn');
+
+    // Show/hide clear button
+    newsInput.addEventListener('input', () => {
+      clearBtn.style.display = newsInput.value ? 'block' : 'none';
+    });
+
+    // Clear textarea
+    clearBtn.addEventListener('click', () => {
+      newsInput.value = '';
+      clearBtn.style.display = 'none';
+      newsInput.focus();
+      result.textContent = '';
+    });
+
+    // Check news via backend
+    checkBtn.addEventListener('click', async () => {
+      const news = newsInput.value.trim();
+      if (!news) {
+        result.textContent = "Please enter news text!";
+        result.style.color = "#f44336";
+        return;
+      }
+
+      try {
+        const resp = await fetch("{{ url_for('fake_news_page') }}", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ news: news })
+        });
+
+        const data = await resp.json();
+
+        if (!resp.ok) {
+          result.textContent = data.error || "Server error";
+          result.style.color = "#f44336";
+        } else {
+          result.textContent = data.result;
+          result.style.color = data.result.includes("⚠️") ? "#f44336" : "#4caf50";
+        }
+      } catch (err) {
+        result.textContent = "Network error: " + err.message;
+        result.style.color = "#f44336";
+      }
+    });
+
+    function goHome() {
+      window.location.href = "{{ url_for('home') }}";
+    }
+  </script>
+</body>
+</html>
